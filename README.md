@@ -20,7 +20,7 @@ Luego, accede a la terminal bash del contenedor docker creado con:
 Crea un usuario, este te servirá para poder acceder al mysql con un cliente
 ```
 create user 'vitrinia'@'%' identified by 'vitrinia';
-grant all privileges on vitrinia.* to 'vitrinia'@'%';
+grant all privileges on vitriniadb.* to 'vitrinia'@'%';
 flush privileges;
 ```
 
