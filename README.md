@@ -1,5 +1,9 @@
 # Tutorial de Docker WSL para MYSQL Vitrinia
 
+Requerimientos:
+Docker Desktop de Windows
+WSL2 con Integración a Docker
+
 Para ahorrar tiempo y explicación, este repositorio cumple la función de facilitar y acelerar el proceso de instalación de MySQL de Docker en WSL.
 
 Solo clona este repositorio y ejecuta:
