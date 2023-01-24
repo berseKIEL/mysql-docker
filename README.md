@@ -5,6 +5,8 @@ Docker Desktop de Windows
 
 WSL2 con Integración a Docker
 
+## Explicación
+
 Para ahorrar tiempo y explicación, este repositorio cumple la función de facilitar y acelerar el proceso de instalación de MySQL de Docker en WSL.
 
 Solo clona este repositorio y ejecuta:
