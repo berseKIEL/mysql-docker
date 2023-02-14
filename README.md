@@ -20,7 +20,7 @@ Luego, accede a la terminal bash del contenedor docker creado con:
 Crea un usuario, este te servirá para poder acceder al mysql con un cliente
 ```
 create user 'vitrinia'@'%' identified by 'vitrinia';
-grant all privileges on vitriniadb.* to 'vitrinia'@'%';
+grant all privileges on vitrinia.* to 'vitrinia'@'%';
 flush privileges;
 ```
 
@@ -32,6 +32,12 @@ Port: 3306
 
 User: vitrinia
 
-Password: vitrini
+Password: vitrinia
 
 Disfruta
+
+### Comandos utiles
+Consumir database
+
+docker exec mysql-db /usr/bin/mysqldump --no-tablespaces --opt -u vitrinia -p vitrinia > vitrinia_prod.sql
+
