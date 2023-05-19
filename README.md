@@ -1,4 +1,4 @@
-# Tutorial de Docker WSL para MYSQL Vitrinia
+# Tutorial de Docker WSL para MYSQL
 
 Requerimientos:
 Docker Desktop de Windows
@@ -11,16 +11,19 @@ Para ahorrar tiempo y explicación, este repositorio cumple la función de facil
 
 Solo clona este repositorio y ejecuta:
 
-`docker-compose -f docker-compose.yaml up -d`
+```bash
+docker-compose -f docker-compose.yaml up -d
+```
 
 Luego, accede a la terminal bash del contenedor docker creado con:
 
 `docker exec -it mysql-db mysql -uroot -proot`
 
 Crea un usuario, este te servirá para poder acceder al mysql con un cliente
-```
-create user 'vitrinia'@'%' identified by 'vitrinia';
-grant all privileges on vitrinia.* to 'vitrinia'@'%';
+```mysql
+create user 'usuariox'@'%' identified by 'contraseniax';
+create schema 'basededatos';
+grant all privileges on basededatos.* to 'usuariox'@'%';
 flush privileges;
 ```
 
@@ -30,14 +33,19 @@ Host: 127.0.0.1
 
 Port: 3306
 
-User: vitrinia
+User: usuariox
 
-Password: vitrinia
+Password: contraseniax
 
 Disfruta
 
 ### Comandos utiles
-Consumir database
+Exportar base de datos
+```bash
+docker exec mysql-db /usr/bin/mysqldump --no-tablespaces --opt -u usuariox -p basededatos > basededatos.sql
+```
 
-docker exec mysql-db /usr/bin/mysqldump --no-tablespaces --opt -u vitrinia -p vitrinia > vitrinia_prod.sql
-
+Importar base de datos
+```bash
+docker exec -i mysql-db mysql -u usuariox -pcontraseñax basededatos < basededatos.sql
+```
